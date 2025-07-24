@@ -1,0 +1,139 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tool-boundary-analyzer"
+version = "0.1.0"
+authors = [
+    {name = "Tool Visualizer Team", email = "contact@toolvisualizer.com"},
+]
+description = "Advanced Tool Boundary Analysis with ML and NLP"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Linguistic",
+    "Framework :: Flask",
+]
+keywords = [
+    "machine-learning",
+    "nlp", 
+    "tool-analysis",
+    "flask",
+    "visualization",
+    "semantic-similarity",
+    "boundaries",
+    "api",
+    "web-app",
+]
+dependencies = [
+    "Flask>=3.0.0",
+    "Flask-CORS>=4.0.0",
+    "scikit-learn>=1.5.0",
+    "sentence-transformers>=2.7.0",
+    "numpy>=1.26.0",
+    "textblob>=0.17.0",
+    "transformers>=4.36.0",
+    "huggingface_hub>=0.20.0",
+    "spacy>=3.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+production = [
+    "gunicorn>=21.2.0",
+    "waitress>=3.0.0",
+]
+
+[project.scripts]
+tool-boundary-analyzer = "tool_visualizer.cli:main"
+toolvis = "tool_visualizer.cli:main"
+tv = "tool_visualizer.cli:main"
+install-spacy-models = "tool_visualizer.install_models:download_spacy_model"
+
+[project.urls]
+Homepage = "https://github.com/your-username/tool-boundary-analyzer"
+"Bug Reports" = "https://github.com/your-username/tool-boundary-analyzer/issues"
+"Source" = "https://github.com/your-username/tool-boundary-analyzer"
+Documentation = "https://github.com/your-username/tool-boundary-analyzer/blob/main/README.md"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["tool_visualizer*"]
+
+[tool.setuptools.package-data]
+"tool_visualizer" = [
+    "../backend/*.py",
+    "../*.html", 
+    "../*.md",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["tool_visualizer"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+show_column_numbers = true
+show_error_codes = true
+pretty = true
+
+[[tool.mypy.overrides]]
+module = [
+    "sklearn.*",
+    "sentence_transformers.*",
+    "textblob.*",
+    "spacy.*",
+    "transformers.*",
+    "huggingface_hub.*",
+]
+ignore_missing_imports = true
