@@ -15,7 +15,7 @@ pip install tool-boundary-analyzer
 Or install from source:
 
 ```bash
-git clone https://github.com/Abdulk084/tool-boundary-analyzer.git
+git clone https://github.com/AI-dit/tool-boundary-analyzer.git
 cd tool-boundary-analyzer
 pip install -e .
 ```
