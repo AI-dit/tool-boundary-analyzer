@@ -73,10 +73,10 @@ tv = "tool_visualizer.cli:main"
 install-spacy-models = "tool_visualizer.install_models:download_spacy_model"
 
 [project.urls]
-Homepage = "https://github.com/your-username/tool-boundary-analyzer"
-"Bug Reports" = "https://github.com/your-username/tool-boundary-analyzer/issues"
-"Source" = "https://github.com/your-username/tool-boundary-analyzer"
-Documentation = "https://github.com/your-username/tool-boundary-analyzer/blob/main/README.md"
+Homepage = "https://github.com/AI-dit/tool-boundary-analyzer"
+"Bug Reports" = "https://github.com/AI-dit/tool-boundary-analyzer/issues"
+"Source" = "https://github.com/AI-dit/tool-boundary-analyzer"
+Documentation = "https://github.com/AI-dit/tool-boundary-analyzer/blob/main/README.md"
 
 [tool.setuptools]
 include-package-data = true
