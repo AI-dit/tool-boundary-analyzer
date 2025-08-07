@@ -1,0 +1,86 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "uploadFile",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "petId": {
+            "type": "integer",
+            "description": "ID of pet to update"
+          },
+          "additionalMetadata": {
+            "type": "string",
+            "description": "Additional data to pass to server"
+          },
+          "file": {
+            "type": "file",
+            "description": "file to upload"
+          }
+        },
+        "required": [
+          "petId"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "addPet",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Pet object that needs to be added to the store"
+          }
+        },
+        "required": [
+          "body"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "updatePet",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "body": {
+            "type": "string",
+            "description": "Pet object that needs to be added to the store"
+          }
+        },
+        "required": [
+          "body"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "findPetsByStatus",
+      "description": "Multiple status values can be provided with comma separated strings",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "array",
+            "description": "Status values that need to be considered for filter"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      }
+    }
+  }
+]
